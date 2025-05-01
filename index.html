@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Niharika Parimi - Software Engineer Portfolio</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #f4f4f9;
+      color: #333;
+      scroll-behavior: smooth;
+    }
+
+    /* Home Section Styling */
+    #home {
+      position: relative;
+      height: 100vh; /* full screen height */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: #ffffff;
+      background: url('https://as1.ftcdn.net/jpg/05/55/90/42/1000_F_555904271_X1CJv1eIrodTM9aE7NIW8k13bNRtbTmj.jpg') no-repeat center center;
+      background-size: cover;
+      background-attachment: scroll;
+      overflow: hidden;
+    }
+
+    #home::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4); /* dark overlay for contrast */
+      z-index: 0;
+    }
+
+    #home h2,
+    #home p {
+      position: relative;
+      z-index: 1;
+      text-shadow: 1px 1px 10px #000;
+    }
+
+    #home h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    #home p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      line-height: 1.6;
+    }
+    #about {
+      background-color: #204668;
+    }
+
+    #skills {
+      background-color: #f1427d;
+    }
+
+    #projects {
+      background-color: #8cf05a;
+    }
+
+    #education {
+      background-color: #53e1e6;
+    }
+
+    #contact {
+      background-color: #ebc943;
+    }
+
+    section {
+      padding: 60px 20px;
+    }
+ /* Rest of the original CSS remains unchanged */
+    /* Animated Naruto Styles */
+    .ninja-corner {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      z-index: 9999;
+      width: 100px;
+      height: 100px;
+      animation: floatNaruto 3s infinite ease-in-out;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      pointer-events: none;
+    }
+    .ninja-corner img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    }
+    .ninja-greeting {
+      margin-top: 5px;
+      background: #ffcc00;
+      color: #002147;
+      padding: 4px 8px;
+      border-radius: 15px;
+      font-size: 12px;
+      font-weight: bold;
+      box-shadow: 0 0 8px rgba(255,204,0,0.5);
+      animation: blinkText 2s infinite;
+    }
+    @keyframes floatNaruto {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    @keyframes blinkText {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: var(--light);
+      color: var(--text);
+      scroll-behavior: smooth;
+      transition: background-color 0.5s, color 0.5s;
+    }
+    body.dark-mode {
+      background: var(--dark);
+      color: var(--dark-text);
+    }
+    body.dark-mode .ninja-corner img {
+      filter: brightness(0.8) contrast(1.2);
+    }
+    body.dark-mode .ninja-greeting {
+      background: #ffcc00;
+      color: #002147;
+    }
+    a {
+      text-decoration: none;
+      color: var(--accent);
+      transition: color 0.3s ease;
+    }
+    a:hover {
+      color: #0097a7;
+    }
+    .dark-mode-btn {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 9998;
+      background: var(--accent);
+      color: var(--dark);
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1.2rem;
+      box-shadow: 0 0 10px rgba(0, 188, 212, 0.5);
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+    }
+    .dark-mode-btn:hover {
+      background: #0097a7;
+      box-shadow: 0 0 15px rgba(0, 151, 168, 0.7);
+    }
+    .container {
+      display: flex;
+      min-height: 100vh;
+      max-width: 1200px;
+      margin: 0 auto;
+      box-shadow: 0 0 30px #2e4affa6;
+      background: #121623;
+      border-radius: 20px;
+      overflow: hidden;
+    }
+    .sidebar {
+      background: #0e123a;
+      color: #82aaff;
+      width: 280px;
+      padding: 3rem 2rem 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      border-right: 2px solid #3249c9aa;
+    }
+    .sidebar .name {
+      font-size: 2.7rem;
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+      letter-spacing: 1.4px;
+      color: #a0c0ff;
+      text-shadow: 0 0 8px #82aaffaa;
+    }
+    .sidebar .role-image {
+      width: 130px;
+      margin: 0 auto 3rem auto;
+      display: block;
+      border-radius: 15px;
+      box-shadow: 0 0 25px #4477ffaa;
+      transition: transform 0.3s ease;
+    }
+    .sidebar .role-image:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 38px #6890ffee;
+    }
+    nav ul {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      user-select: none;
+    }
+    nav li {
+      margin: 1.8rem 0;
+    }
+    nav button {
+      background: none;
+      border: none;
+      font-size: 1.2rem;
+      width: 100%;
+      text-align: left;
+      color: #8eaaffdd;
+      font-weight: 600;
+      cursor: pointer;
+      transition: color 0.4s ease, text-shadow 0.4s ease;
+      padding: 0;
+      letter-spacing: 0.06em;
+    }
+    nav button.active,
+    nav button:hover {
+      color: #a4c6ff;
+      text-shadow: 0 0 5px #82aaff, 0 0 10px #82aaff, 0 0 20px #6f84e7, 0 0 40px #4a6fff;
+    }
+    main {
+      flex: 1;
+      padding: 3.5rem 4rem 5rem;
+      overflow-x: hidden;
+      color: #cbd6ffdd;
+    }
+    section {
+      margin-bottom: 3.8rem;
+    }
+    h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #98b5ff;
+      margin-bottom: 1.3rem;
+      letter-spacing: 0.08em;
+      border-bottom: 3px solid #6688ff;
+      padding-bottom: 0.4rem;
+      max-width: fit-content;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-shadow: 0 0 14px #7db0ff88;
+    }
+    .section-icon {
+      width: 30px;
+      height: 30px;
+      object-fit: contain;
+      filter: drop-shadow(0 0 4px #7397ffaa);
+    }
+    #home h2 {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    #home .hi-logo {
+      width: 36px;
+      height: 36px;
+    }
+    #about p {
+      line-height: 1.65;
+      font-size: 1.12rem;
+      max-width: 720px;
+      text-shadow: 0 0 5px #91acff75;
+    }
+    #skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.3rem;
+      max-width: 720px;
+    }
+    .skill-item {
+      background: #375eff33;
+      border-radius: 15px;
+      padding: 1.2rem 1.6rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex: 1 1 170px;
+      max-width: 250px;
+      transition: background 0.4s ease, box-shadow 0.4s ease;
+      cursor: default;
+      box-shadow: 0 0 10px #2355ff22;
+    }
+    .skill-item:hover {
+      background: #5078ff66;
+      box-shadow: 0 0 10px #6a91ffcc, 0 0 24px #6a91ffaa, 0 0 40px #3463ffdd;
+    }
+    .skill-item img {
+      width: 40px;
+      height: 40px;
+      object-fit: contain;
+      filter: drop-shadow(0 0 3px #5885ffcc);
+    }
+    .skill-item span {
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: #acc3ff;
+      text-shadow: 0 0 5px #98b2ffb0;
+    }
+    #projects {
+      max-width: 720px;
+      position: relative;
+    }
+    .slider-container {
+      overflow: hidden;
+      border-radius: 16px;
+      box-shadow: 0 0 36px #365dff99, inset 0 0 10px #5286ff88;
+    }
+    .slider-track {
+      display: flex;
+      transform: translateX(0);
+      transition: transform 0.45s cubic-bezier(0.4, 0, 0.2,1);
+    }
+    .project-card {
+      min-width: 100%;
+      box-sizing: border-box;
+      background: #233665;
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+      border-radius: 16px;
+      color: #c6d2ffdd;
+      box-shadow: 0 0 10px #5173ffbb, inset 0 0 24px #4e6dff88;
+      transition: box-shadow 0.3s ease;
+    }
+    .project-card:hover {
+      box-shadow: 0 0 34px #6386ffdd, inset 0 0 32px #507fffcc, 0 4px 15px #79a1ffdd;
+      color: #eef3ff;
+    }
+    .project-image {
+      width: 100%;
+      height: 190px;
+      object-fit: cover;
+      border-top-left-radius: 16px;
+      border-top-right-radius: 16px;
+      filter: drop-shadow(0 0 10px #516effcc);
+    }
+    .project-content {
+      padding: 1.6rem 2rem 2rem;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .project-title {
+      font-weight: 800;
+      font-size: 1.35rem;
+      color: #bfd1ff;
+      margin-bottom: 0.8rem;
+      text-shadow: 0 0 8px #83aaffcc;
+    }
+    .project-desc {
+      font-weight: 500;
+      color: #b0c3ffb0;
+      line-height: 1.5;
+      flex-grow: 1;
+      text-shadow: 0 0 6px #597aff99;
+    }
+    .slider-controls {
+      margin-top: 12px;
+      text-align: center;
+      user-select: none;
+    }
+    .slider-btn {
+      cursor: pointer;
+      background: #3366ff;
+      border: none;
+      color: white;
+      padding: 0.55rem 1.3rem;
+      margin: 0 8px;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 1.05rem;
+      user-select: none;
+      box-shadow: 0 0 10px #4979ffcc;
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+    }
+    .slider-btn:hover {
+      background: #254eda;
+      box-shadow: 0 0 18px #517cffee;
+    }
+    #education {
+      background: #1c244e;
+      border-radius: 15px;
+      box-shadow: 0 0 25px #3f56ffaa;
+      padding: 2rem;
+      color: #afc1ffdb;
+    }
+    #education table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 1.15rem;
+      max-width: 720px;
+    }
+    #education th, #education td {
+      padding: 0.75rem 1rem;
+      border: 1px solid #3350a0;
+      text-align: left;
+    }
+    #education th {
+      background: #3766ff;
+      color: white;
+      font-weight: 600;
+    }
+    #education tbody tr:hover {
+      background: #365eff55;
+    }
+    #contact {
+      color: #92aaffcc;
+    }
+    #contact h2 {
+      color: #adc8ffdd;
+      text-shadow: 0 0 14px #92aaffbb;
+    }
+    #contact p {
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      color: #8ea8ffcc;
+      transition: color 0.3s ease;
+    }
+    #contact p a {
+      font-weight: 600;
+      color: #75a5ff;
+      transition: color 0.3s ease;
+    }
+    #contact p a:hover {
+      color: #acc1ff;
+    }
+    #contact img {
+      width: 26px;
+      height: 26px;
+      filter: drop-shadow(0 0 4px #a2b9ffcc);
+    }
+    .resume-btn {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      background: #141411;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-top: 1rem;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 0 10px #58595ccc;
+    }
+    .resume-btn::after {
+      content: '';
+      width: 100%;
+      height: 100%;
+      background: #e0f3f5;
+      position: absolute;
+      top: 0;
+      left: -100%;
+      transition: left 0.3s ease;
+    }
+    .resume-btn:hover::after {
+      left: 0;
+    }
+    .resume-btn:hover {
+      color: var(--dark);
+    }
+    @media (max-width: 950px) {
+      .container {
+        flex-direction: column;
+        max-width: 100%;
+      }
+      .sidebar {
+        width: 100%;
+        height: auto;
+        padding: 1.8rem 3rem;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        box-shadow: 0 0 16px #2357ff33;
+        border-right: none;
+        border-bottom: 2px solid #3249c9aa;
+      }
+      .sidebar .name {
+        font-size: 1.8rem;
+        margin-bottom: 0;
+        letter-spacing: 0.5px;
+        color: #a7baffdd;
+        text-shadow: none;
+      }
+      .sidebar .role {
+        display: none;
+      }
+      .sidebar .role-image {
+        display: none;
+      }
+      nav {
+        margin-top: 0;
+        display:grid;
+        grid-auto-flow: column;
+        gap: 1.6rem;
+        padding-left: 0;
+        position: static;
+        box-shadow: none;
+      }
+      nav button {
+        padding: 0.5rem 0.6rem;
+        font-size: 1rem;
+        margin: 0;
+        border-radius: 0;
+        text-align: center;
+        color: #708bbeaa;
+      }
+      nav button.active,
+      nav button:hover {
+        color: #aac3ff;
+        box-shadow: none;
+        background: transparent;
+      }
+      main {
+        padding: 2rem 1.6rem 3rem;
+        color: #bccdffcc;
+      }
+      #skills {
+        justify-content: center;
+      }
+      #projects {
+        max-width: 100%;
+      }
+      #education table {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Animated Naruto -->
+  <div class="ninja-corner">
+    <img src="nyanpasu_.gif" alt="Nyan Cat Waving" />
+    <div class="ninja-greeting">Hi!</div>
+  </div>
+  <!-- Dark Mode Toggle -->
+  <button class="dark-mode-btn" id="darkModeToggle">🌙</button>
+  <!-- Main Content -->
+  <div class="container">
+    <aside class="sidebar" role="complementary">
+      <div>
+        <div class="name" aria-label="Name">Niharika Parimi</div>
+        <div class="role" aria-label="Role">Software Engineer</div>
+        <img src="https://cdn-icons-png.flaticon.com/512/2139/2139532.png" alt="Girl working on laptop illustration" class="role-image" />
+      </div>
+      <nav aria-label="Primary navigation">
+        <ul>
+          <li><button class="nav-btn active" data-target="home" type="button">Home</button></li>
+          <li><button class="nav-btn" data-target="about" type="button">About</button></li>
+          <li><button class="nav-btn" data-target="skills" type="button">Skills</button></li>
+          <li><button class="nav-btn" data-target="projects" type="button">Projects</button></li>
+          <li><button class="nav-btn" data-target="education" type="button">Education</button></li>
+          <li><button class="nav-btn" data-target="contact" type="button">Contact</button></li>
+        </ul>
+      </nav>
+    </aside>
+    <main role="main">
+      <section id="home" class="active" tabindex="0" aria-label="Home section">
+        <div class="content-wrapper">
+          <h2>
+            <img src="https://cdn-icons-png.flaticon.com/512/4034/4034300.png" alt="Hi logo" class="hi-logo" style="width:32px;height:32px;" />
+            Hi, I'm Niharika Parimi
+          </h2>
+          <p>A motivated and enthusiastic student of Bachelor of Technology specializing in Information Technology with a strong foundation in software development. Aspiring Software Engineer seeking internship opportunities to apply my technical knowledge and problem-solving skills.</p>
+        </div>
+      </section>
+      <section id="about" tabindex="0" aria-label="About section">
+        <h2><img src="https://cdn-icons-png.flaticon.com/512/1665/1665873.png" alt="About me logo" class="section-icon" /> About Me</h2>
+        <p>Motivated and enthusiastic student of Bachelor of Technology specializing in Information Technology, with a strong foundation in software development. Experienced with various programming languages and environments. Seeking an internship opportunity to apply my technical knowledge and problem-solving skills in a practical environment.</p>
+        <p>Aspiring software engineer currently pursuing bachelor's Information Technology.</p>
+      </section>
+      <section id="skills" tabindex="0" aria-label="Skills section">
+        <h2>Skills</h2>
+        <div id="skills-list">
+          <div class="skill-item" title="C Language">
+            <img src="https://cdn-icons-png.flaticon.com/512/6132/6132222.png" alt="C Language Logo" />
+            <span>C</span>
+          </div>
+          <div class="skill-item" title="Java">
+            <img src="https://cdn-icons-png.flaticon.com/512/226/226777.png" alt="Java Logo" />
+            <span>Java</span>
+          </div>
+          <div class="skill-item" title="HTML">
+            <img src="https://cdn-icons-png.flaticon.com/512/732/732212.png" alt="HTML Logo" />
+            <span>HTML</span>
+          </div>
+          <div class="skill-item" title="CSS">
+            <img src="https://cdn-icons-png.flaticon.com/512/732/732190.png" alt="CSS Logo" />
+            <span>CSS</span>
+          </div>
+          <div class="skill-item" title="Visual Studio Code">
+            <img src="https://cdn-icons-png.flaticon.com/512/919/919836.png" alt="Visual Studio Code Logo" />
+            <span>Visual Studio Code</span>
+          </div>
+          <div class="skill-item" title="Power BI">
+            <img src="https://cdn-icons-png.flaticon.com/512/5968/5968342.png" alt="Power BI Logo" />
+            <span>Power BI</span>
+          </div>
+        </div>
+      </section>
+      <section id="projects" tabindex="0" aria-label="Projects section">
+        <h2>Projects</h2>
+        <div id="projects-list" class="slider-container">
+          <div class="slider-track">
+            <article class="project-card" tabindex="0" aria-labelledby="proj1-title" aria-describedby="proj1-desc">
+              <img class="project-image" src="https://images.ctfassets.net/tg3z0zgy3dgv/7Ii7Pf6LWXMZUv11UZbTjp/b5b58025a56c6cf1ab00e763273d00ea/2023-12_aws-hero.png" alt="Cost Management Dashboard for AWS Resources" />
+              <div class="project-content">
+                <h3 id="proj1-title" class="project-title">Cost Management Dashboard for AWS Resources</h3>
+                <p id="proj1-desc" class="project-desc">This manages cost for the resources used in AWS and sends alerts if idle or overused.</p>
+              </div>
+            </article>
+            <article class="project-card" tabindex="0" aria-labelledby="proj2-title" aria-describedby="proj2-desc">
+              <img class="project-image" src="https://cdn-icons-png.flaticon.com/512/1995/1995496.png" alt="AI algorithm icon" />
+              <div class="project-content">
+                <h3 id="proj2-title" class="project-title">Supermarket Sales</h3>
+                <p id="proj2-desc" class="project-desc">Analyzing the sales dataset with Artificial Intelligence algorithms using Python packages pandas and NumPy in Google Colab.</p>
+              </div>
+            </article>
+            <article class="project-card" tabindex="0" aria-labelledby="proj3-title" aria-describedby="proj3-desc">
+              <img class="project-image" src="https://cdn-icons-png.flaticon.com/512/1041/1041361.png" alt="Gas leakage icon" />
+              <div class="project-content">
+                <h3 id="proj3-title" class="project-title">Gas Leakage Detection and Automatic Electronic Off System</h3>
+                <p id="proj3-desc" class="project-desc">Implemented using sensors to control explosions due to gas leakages.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+        <div class="slider-controls" aria-label="Project slider controls">
+          <button class="slider-btn" id="prevBtn" aria-label="Previous project">Prev</button>
+          <button class="slider-btn" id="nextBtn" aria-label="Next project">Next</button>
+        </div>
+      </section>
+      <section id="education" tabindex="0" aria-label="Education section">
+        <h2>Education</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Institution</th>
+              <th>Degree / Level</th>
+              <th>Year</th>
+              <th>Details</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>CMR Engineering College</td>
+              <td>Bachelor of Technology</td>
+              <td>2022 - 2026</td>
+              <td>Major: Information Technology | CGPA: 9.14/10</td>
+            </tr>
+            <tr>
+              <td>Narayana College</td>
+              <td>Intermediate (State Board)</td>
+              <td>2020 - 2022</td>
+              <td>Major: MPC | CGPA: 9.58/10</td>
+            </tr>
+            <tr>
+              <td>Vijay High School</td>
+              <td>SSC</td>
+              <td>2019 - 2020</td>
+              <td>CGPA: 10/10</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <section id="contact" tabindex="0" aria-label="Contact section">
+        <h2>Contact</h2>
+        <p><img src="https://cdn-icons-png.flaticon.com/512/561/561127.png" alt="Email icon" class="contact-logo" /> <a href="mailto:228r1a1243.niharika@gmail.com">228r1a1243.niharika@gmail.com</a></p>
+        <p><img src="https://cdn-icons-png.flaticon.com/512/483/483947.png" alt="Phone icon" class="contact-logo" /> 9989828496</p>
+        <p><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn icon" class="contact-logo" /> <a href="https://www.linkedin.com/in/niharika-parimi-0bb9962a4/" target="_blank" rel="noopener noreferrer">Niharika Parimi</a></p>
+        <p><img src="https://cdn-icons-png.flaticon.com/512/1793/1793661.png" alt="Resume icon" class="contact-logo" /> <a href="RESUME.NIHARIKA.pdf" download class="resume-btn">Download Resume</a></p>
+      </section>
+    </main>
+  </div>
+  <script>
+    // Dark Mode Toggle
+    const toggleBtn = document.getElementById('darkModeToggle');
+    const body = document.body;
+    toggleBtn.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');
+      localStorage.setItem('darkMode', body.classList.contains('dark-mode'));
+    });
+    window.addEventListener('DOMContentLoaded', () => {
+      const isDarkMode = localStorage.getItem('darkMode') === 'true';
+      if (isDarkMode) body.classList.add('dark-mode');
+    });
+    // Navigation button and section switching
+    const buttons = document.querySelectorAll('nav button.nav-btn');
+    const sections = document.querySelectorAll('main section');
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        const target = button.getAttribute('data-target');
+        buttons.forEach(btn => btn.classList.remove('active'));
+        sections.forEach(section => section.classList.remove('active'));
+        button.classList.add('active');
+        const targetSection = document.getElementById(target);
+        if(targetSection) {
+          targetSection.classList.add('active');
+          targetSection.scrollIntoView({behavior: 'smooth', block: 'start'});
+          targetSection.focus({preventScroll: true});
+        }
+      });
+    });
+    // Project Slider functionality
+    const sliderTrack = document.querySelector('.slider-track');
+    const slides = document.querySelectorAll('.project-card');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    let currentIndex = 0;
+    function updateSlider() {
+      sliderTrack.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+    prevBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex === 0) ? slides.length - 1 : currentIndex - 1;
+      updateSlider();
+    });
+    nextBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex === slides.length - 1) ? 0 : currentIndex + 1;
+      updateSlider();
+    });
+  </script>
+</body>
+</html>
